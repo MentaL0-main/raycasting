@@ -1,3 +1,4 @@
+#include "player.hpp"
 #include <SDL3/SDL.h>
 #include <SDL3/SDL_keyboard.h>
 #include <SDL3/SDL_render.h>
@@ -7,6 +8,8 @@
 const char* WINDOW_TITLE = "Raycasting";
 constexpr unsigned int WINDOW_WIDTH = 900;
 constexpr unsigned int WINDOW_HEIGHT = 600;
+constexpr unsigned int WINDOW_HALF_WIDTH = WINDOW_WIDTH / 2;
+constexpr unsigned int WINDOW_HALF_HEIGHT = WINDOW_HEIGHT / 2;
 
 SDL_Window* window = nullptr;
 SDL_Renderer* renderer = nullptr;
@@ -30,6 +33,8 @@ void logic();
 void render();
 
 void mainloop();
+
+Player player(SDL_FPoint{WINDOW_HALF_WIDTH, WINDOW_HALF_HEIGHT}, 12.0f, 4.0f);
 
 int main() {
   if (!init()) {
@@ -93,16 +98,18 @@ void input() {
   if (state[SDL_SCANCODE_ESCAPE]) {
     running = false;
   }
+
+  player.movement(state);
 }
 
 void logic() {
-
 }
 
 void render() {
   SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
   SDL_RenderClear(renderer);
 
+  player.render(renderer);
 
   SDL_RenderPresent(renderer);
 }
@@ -112,5 +119,7 @@ void mainloop() {
     input();
     logic();
     render();
+
+    SDL_Delay(16);
   }
 }

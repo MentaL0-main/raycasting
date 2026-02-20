@@ -7,8 +7,6 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 find_package(SDL3 REQUIRED)
 
 add_executable(${PROJECT_NAME} src/main.cpp
-                               src/window.cpp
-                               src/renderer.cpp
                                src/raycast.cpp
                                src/player.cpp
                                src/world.cpp)

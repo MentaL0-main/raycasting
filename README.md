@@ -21,9 +21,9 @@ cmake .. && make -j4
 ```
 
 ## Controls
-| Input | Acation |
--------------------
-| WASD | Movement |
+| Input | Action |
+|-------|--------|
+| WASD  | Movement |
 | Mouse motion | Look around |
 | Escape | Quit |
 

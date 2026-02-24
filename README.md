@@ -1,6 +1,6 @@
 # Raycasting
 
-This game simulwated 3d graphics, using raycasting algorithm.
+This game simulated 3d graphics, using raycasting algorithm.
 
 ![Gameplay, in dev]()
 

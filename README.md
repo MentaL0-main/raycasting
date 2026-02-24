@@ -26,7 +26,6 @@ cmake .. && make -j4
 | WASD | Movement |
 | Mouse motion | Look around |
 | Escape | Quit |
------------------------------
 
 ## License 
 This project use **MIT License**.
